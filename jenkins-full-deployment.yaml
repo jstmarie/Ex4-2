@@ -42,10 +42,15 @@ spec:
         volumeMounts:
         - name: jenkins-home
           mountPath: /var/jenkins_home
+        - name: maven-cache
+          mountPath: /root/.m2/repository
       volumes:
       - name: jenkins-home
         persistentVolumeClaim:
           claimName: jenkins-pv-claim
+      - name: maven-cache
+        persistentVolumeClaim:
+          claimName: maven-pv-claim
 ---
 apiVersion: v1
 kind: Service
