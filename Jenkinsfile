@@ -4,7 +4,7 @@ podTemplate(containers: [
         ),
     ],
     volumes: [
-        persistentVolumeClaim(mountPath: '/root/.m2/repository', claimName: 'jenkins-pvc'),
+        persistentVolumeClaim(mountPath: '/root/.m2/repository', claimName: 'jenkins-pv-claim'),
     ]
 ) {
     node(POD_LABEL) {
